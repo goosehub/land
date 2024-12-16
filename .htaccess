@@ -4,3 +4,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*|alpha|beta|v4)$ index.php [QSA,L]
 
 Redirect 301 /alpha https://landgrab.xyz
+
+# auth.php not allowed through http
+<Files "auth.php">
+Order Allow,Deny
+Deny from all
+</Files>
